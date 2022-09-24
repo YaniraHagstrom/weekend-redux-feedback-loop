@@ -79,7 +79,9 @@ export default function Feelings(){
                     </RadioGroup>
                 </FormControl>
             </div>
-            <button onClick={submitFeeling}>Next</button>
+            <LINK to='feelings'>
+                <button onClick={submitFeeling}>Next</button>
+            </LINK>
         </>
 
     );
