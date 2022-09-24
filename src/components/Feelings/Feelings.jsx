@@ -1,12 +1,32 @@
 // MUI imports:
-import * as React from 'react';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 export default function Feelings(){
+    const [feeling, setFeeling] = useState('');
+    // console.log(feeling);
+
+    const dispatch = useDispatch();
+    const submitFeeling = ()=> {
+        console.log(feeling);
+        const action = {
+            type: 'UPDATE_FEELING',
+            payload: feeling
+        }
+        dispatch(action);
+    }
+
+    const handleRating = (e)=> {
+        setFeeling(e.target.value);
+    }
+    // console.log(feeling);
 
     return(
         <>
@@ -20,8 +40,10 @@ export default function Feelings(){
                     <RadioGroup
                         row
                         aria-labelledby="demo-form-control-label-placement"
-                        name="position"
+                        name="controlled-radio-buttons-group"
                         defaultValue="top"
+                        value={feeling}
+                        onChange={handleRating}
                         >
                         <FormControlLabel
                         value="1"
@@ -57,7 +79,7 @@ export default function Feelings(){
                     </RadioGroup>
                 </FormControl>
             </div>
-            <button>Next</button>
+            <button onClick={submitFeeling}>Next</button>
         </>
 
     );

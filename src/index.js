@@ -12,7 +12,9 @@ import logger from 'redux-logger';
 
 // Reducers
 const feelingsReducer = (state = 0, action)=>{
-    
+        if (action.type === 'UPDATE_FEELING'){
+            return Number(action.payload);
+        }
     return state;
 }
 
