@@ -12,9 +12,15 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
-      
-      <Feelings />
+      <Header /> 
+      <Router>
+        <Route exact path='/'>
+          <Feelings />
+        </Route>
+        <Route exact path='/understanding'>
+          <Understanding />
+        </Route>
+      </Router>
     </div>
   );
 }

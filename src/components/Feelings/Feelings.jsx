@@ -10,20 +10,27 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export default function Feelings(){
-    const [feeling, setFeeling] = useState('');
+    const [feeling, setFeeling] = useState(0);
+    const [url, setUrl] = useState('/')
     // console.log(feeling);
 
     const dispatch = useDispatch();
     const submitFeeling = ()=> {
         console.log(feeling);
-        const action = {
-            type: 'UPDATE_FEELING',
-            payload: feeling
+        if (feeling === 0){
+            alert('Please select a value.')
         }
-        dispatch(action);
+        else {
+            const action = {
+                type: 'UPDATE_FEELING',
+                payload: feeling
+            }
+            dispatch(action);
+        }
     }
 
     const handleRating = (e)=> {
+        setUrl('/understanding');
         setFeeling(e.target.value);
     }
     // console.log(feeling);
@@ -79,9 +86,9 @@ export default function Feelings(){
                     </RadioGroup>
                 </FormControl>
             </div>
-            <LINK to='feelings'>
+            <Link to={url}>
                 <button onClick={submitFeeling}>Next</button>
-            </LINK>
+            </Link>
         </>
 
     );

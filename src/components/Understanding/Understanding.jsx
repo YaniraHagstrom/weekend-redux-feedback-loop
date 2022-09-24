@@ -7,23 +7,35 @@ import FormLabel from '@mui/material/FormLabel';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom"
 
 export default function Understanding(){
-    const [understanding, setUnderstanding] = useState('');
+    const [understanding, setUnderstanding] = useState(0);
+    const [url, setUrl] = useState('/understanding')
     // console.log(understanding);
 
     const dispatch = useDispatch();
-    const submitUnderstanding = ()=> {
-        console.log(understanding);
-        const action = {
-            type: 'UPDATE_UNDERSTANDING',
-            payload: understanding
-        }
-        dispatch(action);
+
+    const alertUser = () => {
+        alert('Please select a value.');
     }
 
+    const submitUnderstanding = ()=> {
+        console.log(understanding);
+        if (understanding === 0){
+            alert('Please select a value.');
+        }
+        else {
+            const action = {
+                type: 'UPDATE_UNDERSTANDING',
+                payload: understanding
+            }
+            dispatch(action);
+        }
+    }
+    
     const handleRating = (e)=> {
+        setUrl('/supported');
         setUnderstanding(e.target.value);
     }
     // console.log(understanding);
@@ -79,9 +91,9 @@ export default function Understanding(){
                     </RadioGroup>
                 </FormControl>
             </div>
-            <LINK to="/understanding">
+            <Link to={url}>
                 <button onClick={submitUnderstanding}>Next</button>
-            </LINK>
+            </Link>
         </>
 
     );
