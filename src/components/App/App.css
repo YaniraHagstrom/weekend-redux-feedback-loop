@@ -21,3 +21,9 @@
 h4 {
   font-style: italic;
 }
+
+#comment {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
