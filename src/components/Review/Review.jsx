@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
+
 export default function Review(){
     const feeling = useSelector(store => store.feelingsReducer);
     const understanding = useSelector(store => store.understandingReducer);
@@ -21,7 +22,7 @@ export default function Review(){
                 comments
             }
         }).then(response => {
-            
+
         })
 
     }
@@ -33,7 +34,7 @@ export default function Review(){
                 <h2>Support: {support}</h2>
                 <h2>Comments: {comments}</h2>
             </div>
-            <Link to='/review'>
+            <Link to='/success'>
                 <Button variant="outlined" onClick={submit}>Next</Button>
             </Link>
         </>
