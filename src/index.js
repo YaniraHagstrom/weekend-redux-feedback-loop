@@ -32,7 +32,7 @@ const supportedReducer = (state = 0, action)=>{
     return state;
 }
 
-const commentsReducer = (state = 0, action)=>{
+const commentsReducer = (state = '', action)=>{
     if (action.type === 'UPDATE_COMMENT'){
         return action.payload;
     }

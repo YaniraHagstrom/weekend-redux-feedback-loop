@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
 
 function App() {
 
@@ -27,6 +28,12 @@ function App() {
         </Route>
         <Route exact path='/comments'>
           <Comments />
+        </Route>
+        <Route exact path='/review'>
+          <Review />
+        </Route>
+        <Route exact path='/success'>
+          <Success />
         </Route>
       </Router>
     </div>
