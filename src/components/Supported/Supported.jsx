@@ -10,6 +10,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom"
 
+import Header from '../Header/Header';
+
 export default function Supported(){
     const [supported, setSupported] = useState(0);
     const [url, setUrl] = useState('/supported')
@@ -39,6 +41,7 @@ export default function Supported(){
 
     return(
         <>
+            <Header /> 
             <div>
                 <h2>Are you feeling supported?</h2>
                 <FormControl>

@@ -10,12 +10,12 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 
 function App() {
 
   return (
     <div className='App'>
-      <Header /> 
       <Router>
         <Route exact path='/'>
           <Feelings />

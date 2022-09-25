@@ -10,6 +10,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Header from '../Header/Header';
+
 export default function Feelings(){
     const [feeling, setFeeling] = useState(0);
     const [url, setUrl] = useState('/')
@@ -38,6 +40,7 @@ export default function Feelings(){
 
     return(
         <>
+            <Header /> 
             <div>
                 <h2>How are you feeling today?</h2>
                 <FormControl>

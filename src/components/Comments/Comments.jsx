@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Header from '../Header/Header';
+
 export default function Comments(){
     const [comment, setComment] = useState('');
 
@@ -28,6 +30,7 @@ export default function Comments(){
 
     return(
         <>
+            <Header /> 
             <h2>Would you like to leave a comment?</h2>
             <div id='comment'>
                 <Box

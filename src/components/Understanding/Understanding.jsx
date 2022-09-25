@@ -8,7 +8,9 @@ import Button from '@mui/material/Button';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
+import Header from '../Header/Header';
 
 export default function Understanding(){
     const [understanding, setUnderstanding] = useState(0);
@@ -43,6 +45,7 @@ export default function Understanding(){
 
     return(
         <>
+            <Header /> 
             <div>
                 <h2>How well are you understanding the content?</h2>
                 <FormControl>
