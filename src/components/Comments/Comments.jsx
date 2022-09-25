@@ -47,9 +47,14 @@ export default function Comments(){
                     />
                 </Box>
             </div>
-            <Link to='/review'>
-                <Button variant="outlined" onClick={submitComment}>Next</Button>
-            </Link>
+            <div>
+                <Link to='/supported'>
+                    <Button variant="outlined">back</Button>
+                </Link>
+                <Link to='/review'>
+                    <Button variant="outlined" onClick={submitComment}>Next</Button>
+                </Link>
+            </div>
         </>
 
     );

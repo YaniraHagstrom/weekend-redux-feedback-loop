@@ -15,12 +15,19 @@ const feelingsReducer = (state = 0, action)=>{
         if (action.type === 'UPDATE_FEELING'){
             return Number(action.payload);
         }
+        if (action.type === 'CLEAR_CONTENT'){
+            return 0;
+        }
     return state;
 }
 
 const understandingReducer = (state = 0, action)=>{
     if (action.type === 'UPDATE_UNDERSTANDING'){
         return Number(action.payload);
+        
+    }
+    if (action.type === 'CLEAR_CONTENT'){
+        return 0;
     }
     return state;
 }
@@ -29,12 +36,18 @@ const supportedReducer = (state = 0, action)=>{
     if (action.type === 'UPDATE_SUPPORTED'){
         return Number(action.payload);
     }
+    if (action.type === 'CLEAR_CONTENT'){
+        return 0;
+    }
     return state;
 }
 
 const commentsReducer = (state = '', action)=>{
     if (action.type === 'UPDATE_COMMENT'){
         return action.payload;
+    }
+    if (action.type === 'CLEAR_CONTENT'){
+        return '';
     }
     return state;
 }
