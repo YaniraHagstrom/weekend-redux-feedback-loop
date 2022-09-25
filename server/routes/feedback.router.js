@@ -6,7 +6,8 @@ const db = require('../modules/pool');
 // GET all feedbacks:
 router.get('/', (req, res)=> {
     const sqlQuery = `
-        SELECT * FROM feedback;`
+        SELECT * FROM feedback
+            ORDER BY date DESC; ;`
 
     db.query(sqlQuery)
         .then(result => {
