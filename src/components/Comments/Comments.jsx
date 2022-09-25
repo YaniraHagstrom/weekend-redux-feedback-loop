@@ -5,14 +5,18 @@ import { useFormControl } from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Header from '../Header/Header';
 
 export default function Comments(){
+    const commentReducer = useSelector(store=> store.commentsReducer)
+    // This retains the comment text in the input until   the feedback is submitted.
     useEffect(() => {
-        setComment(localStorage.getItem("inputValue"));
+        if (commentReducer !== ''){
+            setComment(localStorage.getItem("inputValue"));
+        }
     }, []);
     
     const [comment, setComment] = useState('');
