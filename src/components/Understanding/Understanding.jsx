@@ -43,7 +43,7 @@ export default function Understanding(){
     return(
         <>
             <div>
-                <h2>How are you feeling today?</h2>
+                <h2>How well are you understanding the content?</h2>
                 <FormControl>
                     {/* <div>
                         <FormLabel id="demo-form-control-label-placement">Label placement</FormLabel>

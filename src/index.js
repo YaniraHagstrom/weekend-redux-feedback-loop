@@ -19,12 +19,16 @@ const feelingsReducer = (state = 0, action)=>{
 }
 
 const understandingReducer = (state = 0, action)=>{
-    
+    if (action.type === 'UPDATE_UNDERSTANDING'){
+        return Number(action.payload);
+    }
     return state;
 }
 
 const supportedReducer = (state = 0, action)=>{
-    
+    if (action.type === 'UPDATE_SUPPORTED'){
+        return Number(action.payload);
+    }
     return state;
 }
 
