@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
@@ -10,6 +10,7 @@ export default function Review(){
     const support = useSelector(store => store.supportedReducer);
     const comments = useSelector(store => store.commentsReducer);
 
+    const history = useHistory();
     const dispatch = useDispatch();
     const submit = ()=> {
         // POST to DB:
@@ -40,9 +41,9 @@ export default function Review(){
                 <h2>Comments: {comments}</h2>
             </div>
             <div>
-                <Link to='/comments'>
-                    <Button variant="outlined">back</Button>
-                </Link>
+                
+                <Button onClick = {()=> history.goBack()} variant="outlined">back</Button>
+                
                 <Link to='/success'>
                 <Button variant="outlined" onClick={submit}>Next</Button>
             </Link>

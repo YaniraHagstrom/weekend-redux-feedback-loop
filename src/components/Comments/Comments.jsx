@@ -4,17 +4,22 @@ import TextField from '@mui/material/TextField';
 import { useFormControl } from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Header from '../Header/Header';
 
 export default function Comments(){
+    useEffect(() => {
+        setComment(localStorage.getItem("inputValue"));
+    }, []);
+    
     const [comment, setComment] = useState('');
 
     const handleComment = (e)=> {
         setComment(e.target.value)
+        localStorage.setItem("inputValue", e.target.value)
     }
     // console.log(comment);
 
