@@ -95,10 +95,14 @@ export default function Understanding(){
                     </RadioGroup>
                 </FormControl>
             </div>
-            <Link to={url}>
-                <Button variant="outlined" onClick={submitUnderstanding}>Next</Button>
-            </Link>
+            <div>
+                <Link to='/'>
+                    <Button variant="outlined">back</Button>
+                </Link>
+                <Link to={url}>
+                    <Button variant="outlined" onClick={submitUnderstanding}>Next</Button>
+                </Link>
+            </div>
         </>
-
     );
 }

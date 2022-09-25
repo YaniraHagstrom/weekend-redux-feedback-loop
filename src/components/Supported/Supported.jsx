@@ -91,9 +91,14 @@ export default function Supported(){
                     </RadioGroup>
                 </FormControl>
             </div>
-            <Link to={url}>
-                <Button variant="outlined" onClick={submitSupported}>Next</Button>
-            </Link>
+            <div>
+                <Link to='/understanding'>
+                    <Button variant="outlined">back</Button>
+                </Link>
+                <Link to={url}>
+                    <Button variant="outlined" onClick={submitSupported}>Next</Button>
+                </Link>
+            </div>
         </>
     );
 }

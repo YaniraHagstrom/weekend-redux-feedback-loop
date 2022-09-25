@@ -4,6 +4,20 @@ const db = require('../modules/pool');
 
 
 // GET all feedbacks:
+router.get('/', (req, res)=> {
+    const sqlQuery = `
+        SELECT * FROM feedback
+            ORDER BY date DESC; ;`
+
+    db.query(sqlQuery)
+        .then(result => {
+            // console.log(result.rows);
+            res.send(result.rows);
+        }).catch(error => {
+            res.sendStatus(500);
+            consol.log('Error getting feedback from database:', error);
+        })
+})
 
 
 
@@ -37,6 +51,23 @@ router.post('/', (req, res)=> {
 
 
 // DELETE feedback based on id:
+router.delete('/:id', (req, res)=> {
+    console.log('delete request received');
+    console.log(req.params.id);
+    const sqlQuery = `
+        DELETE FROM feedback
+            WHERE id=$1;
+    `
+    const sqlValues = [req.params.id];
+    db.query(sqlQuery,sqlValues)
+        .then(response => {
+            res.sendStatus(200);
+        })
+        .catch(error => {
+            res.sendStatus(500);
+            console.log('Error in Delete', error);
+        })
+})
 
 
 
