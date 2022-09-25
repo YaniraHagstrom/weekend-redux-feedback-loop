@@ -4,6 +4,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Button from '@mui/material/Button';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -88,9 +89,8 @@ export default function Supported(){
                 </FormControl>
             </div>
             <Link to={url}>
-                <button onClick={submitSupported}>Next</button>
+                <Button variant="outlined" onClick={submitSupported}>Next</Button>
             </Link>
         </>
-
     );
 }

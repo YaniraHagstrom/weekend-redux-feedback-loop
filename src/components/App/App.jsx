@@ -8,6 +8,7 @@ import Feelings from '../Feelings/Feelings';
 import Header from '../Header/Header';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route exact path='/supported'>
           <Supported />
+        </Route>
+        <Route exact path='/comments'>
+          <Comments />
         </Route>
       </Router>
     </div>

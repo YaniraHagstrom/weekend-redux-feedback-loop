@@ -4,6 +4,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Button from '@mui/material/Button';
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -92,7 +93,7 @@ export default function Understanding(){
                 </FormControl>
             </div>
             <Link to={url}>
-                <button onClick={submitUnderstanding}>Next</button>
+                <Button variant="outlined" onClick={submitUnderstanding}>Next</Button>
             </Link>
         </>
 
